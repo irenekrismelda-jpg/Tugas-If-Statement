@@ -1,0 +1,39 @@
+from datetime import datetime
+
+print("=== Aplikasi Manajemen Aktivitas ===")
+
+nama = input("Masukkan nama: ")
+aktivitas = input("Masukkan aktivitas (sarapan/kerja): ").lower()
+
+menu_tersedia = ["telur", "ikan", "nugget"]
+
+if aktivitas == "sarapan":
+
+    menu = input("Masukkan menu sarapan: ").lower()
+
+    if menu in menu_tersedia:
+        print(f"\nHalo irene")
+        print(f"Bahan {menu} tersedia.")
+        print("Silakan memasak.")
+
+    else:
+        print(f"\nHalo irene")
+        print(f"Bahan {menu} tidak tersedia.")
+        print("Silakan membeli bahan terlebih dahulu.")
+
+elif aktivitas == "kerja":
+
+    sekarang = datetime.now()
+
+    jam = sekarang.hour
+    menit = sekarang.minute
+
+    print(f"\nWaktu sekarang: {jam}:{menit}")
+
+    if jam >= 8:
+        print("Anda terlambat masuk kerja!")
+    else:
+        print("Anda belum terlambat.")
+
+else:
+    print("Aktivitas tidak dikenali.")
